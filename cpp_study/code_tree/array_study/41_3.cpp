@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
-
+/*
+n개의 숫자 중 최대 2개
+*/
 int main()
 {
     freopen("input.txt", "rt", stdin);

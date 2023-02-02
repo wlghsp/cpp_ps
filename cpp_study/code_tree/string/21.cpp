@@ -2,28 +2,28 @@
 #include <string>
 using namespace std;
 /*
-정수만 더하기: 내 풀이
+Run Length 인코딩: 내 풀이
 */
 int main()
 {
 
-    char s[15] = "congratulation";
-    int i;
-    for (i = 0; i < 14; i++)
-    {
-        if (s[i] == 'a')
-            continue;
-        if (s[i] == 'e')
-            continue;
-        if (s[i] == 'i')
-            continue;
-        if (s[i] == 'o')
-            continue;
-        if (s[i] == 'u')
-            continue;
-        printf("%c", s[i]);
+    freopen("input.txt", "rt", stdin);
+    string A;
+    cin >> A;
+    A = A + " ";
+    string result = "";
+    int cnt = 1;
+    for(int i = 0; i < A.length() -1; i++) {
+        if(A[i] == A[i+1]) {
+            cnt++;
+        } else {
+            result += A[i];
+            result += to_string(cnt);
+            cnt = 1;
+        }
+
     }
-    printf("\n");
+    cout << result.length() << '\n' << result;    
 
     return 0;
 }

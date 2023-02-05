@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 /*
-양옆 문자 제거하기
+문자 제거하기
 : 내 풀이
 
 문자열이 주어지면, 앞에서 2번째 원소와 뒤에서 2번째 원소를 제거한 후의 문자열을 출력하는 프로그램을 작성해보세요.
@@ -18,11 +18,15 @@ int main()
     freopen("input.txt", "rt", stdin);
     string str;
     cin >> str;
+    int n;
     int len = str.length();
-    str.erase(1, 1);
-    len--;
-    str.erase(len -2, 1);
-    len--;
-    cout << str;
+    while (len > 1)
+    {
+        cin >> n;
+        if(n >= len) n = len - 1;
+        str.erase(n, 1);
+        len--;
+        cout << str << '\n';
+    }
     return 0;
 }

@@ -62,3 +62,6 @@
 
 # End of https://www.toptal.com/developers/gitignore/api/c++,visualstudiocode
 .vscode/settings.json
+
+input.txt
+output.txt

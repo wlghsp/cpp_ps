@@ -4,6 +4,10 @@ using namespace std;
 
 /*
 그 계절, 그 날 : 내 풀이
+
+마지막날 구하는 함수에서 12로 잘못 타이핑한 것을 그대로 사용하다
+오답 발생
+
 */
 
 bool isLeapYear(int y)
@@ -15,7 +19,7 @@ int lastDayNumber(int m, bool leapYear)
 {
   if (m == 2)
     return leapYear ? 29 : 28;
-  if (m == 4 || m == 6 || m == 9 || m == 12)
+  if (m == 4 || m == 6 || m == 9 || m == 11)
     return 30;
   return 31;
 }

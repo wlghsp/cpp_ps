@@ -13,7 +13,7 @@ int days[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 bool lastDayNumber(int m) {
   if (m == 2)
     return 28;
-  if(m == 4 || m == 6 || m == 9 || m == 12)
+  if(m == 4 || m == 6 || m == 9 || m == 11)
     return 30;
  return 31;
 }

@@ -10,10 +10,10 @@ using namespace std;
 class Spy {
   public:
     string secret;
-    string place;
+    char place;
     int time;
 
-    Spy(string secret, string place, int time) {
+    Spy(string secret, char place, int time) {
       this->secret = secret;
       this->place = place;
       this->time = time;
@@ -24,7 +24,8 @@ class Spy {
 int main() {
 
     freopen("input.txt", "rt", stdin);
-    string a, b;
+    string a;
+    char b;
     int t;
     cin >> a >> b >> t;
     Spy spy = Spy(a, b, t);

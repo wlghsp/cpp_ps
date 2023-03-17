@@ -1,5 +1,6 @@
 {
     "files.autoGuessEncoding": true,
+    "C_Cpp.autoAddFileAssociations": false,
     "files.associations": {
         "algorithm": "cpp"
     }

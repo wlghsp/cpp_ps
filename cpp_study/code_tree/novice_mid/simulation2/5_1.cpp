@@ -44,9 +44,9 @@ int main()
     while (t--)
     {
       if (d == 'R')
-        pos_a[time_b] = pos_a[time_b - 1] + 1;
+        pos_b[time_b] = pos_b[time_b - 1] + 1;
       else
-        pos_a[time_b] = pos_a[time_b - 1] - 1;
+        pos_b[time_b] = pos_b[time_b - 1] - 1;
 
       time_b++;
     }

@@ -3,7 +3,7 @@
 #include <algorithm>
 using namespace std;
 /*
-2진법으로 표현하기
+2진수로 변환하기
 */
 
 

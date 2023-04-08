@@ -45,6 +45,7 @@ bool InRange(int x, int y) {
 // (x, y)에서 시작하여 next_dir 방향으로
 // 이동한 이후의 위치를 구합니다. 
 void Move(int next_dir) {
+  // 남 서 북 동
   int dx[DIR_NUM] = {1, 0, -1, 0};
   int dy[DIR_NUM] = {0, -1, 0, 1};
 
@@ -59,9 +60,11 @@ int Simulate() {
   {
     if (arr[x][y] == '/')
     {
+      // 0 <-> 1 / 2 <-> 3
       Move(move_dir ^ 1);
     }
     else
+      // 0 <-> 3 / 1 <-> 2
       Move(3 - move_dir);
     
     move_num += 1;

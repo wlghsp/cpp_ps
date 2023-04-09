@@ -12,8 +12,6 @@ using namespace std;
 int r, c;
 char board[MAX_RC][MAX_RC];
 int ans;
-int x = 0, y = 0;
-vector<pair<int, int>> pick;
 
 void Input()
 {

@@ -23,7 +23,7 @@ void Input() {
 }
 
 
-int Process(string a, string b) {
+int CountCarry(string a, string b) {
    int cnt = 0;
    
    int carry = 0;
@@ -64,11 +64,11 @@ int Process(string a, string b) {
 
 bool CarryExist(string a, string b, string c) {
   int cnt  = 0;
-  cnt = Process(a, b); 
+  cnt = CountCarry(a, b); 
   if(cnt > 0) {
     return true;
   }
-  cnt = Process(to_string(stoi(a) + stoi(b)), c);
+  cnt = CountCarry(to_string(stoi(a) + stoi(b)), c);
   if(cnt > 0) return true;
 
   return false;

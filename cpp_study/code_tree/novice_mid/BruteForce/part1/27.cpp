@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include <climits>
 #define MAX_N 100
 using namespace std;
@@ -9,29 +10,35 @@ using namespace std;
 */
 
 int N, M;
-int arr1[MAX_N];
-int arr2[MAX_N];
+string a, b;
 
 void Input() {
   cin >> N >> M;
-  for (int i = 0; i < N; i++) cin >> arr1[i];
-  for (int i = 0; i < M; i++) cin >> arr2[i];
+  for (int i = 0; i < N; i++) {
+    char c;
+    cin >> c;
+    a += c;
+  }
+  for (int i = 0; i < M; i++) {
+    char c;
+    cin >> c;
+    b += c;
+  }
 }
 
 int Search() {
+  // 2번째 배열 정렬
+  sort(b.begin(), b.end());
   int cnt = 0;
-   for (int i = 0; i < N - M; i++)
+
+  for (int i = 0; i < N; i++)
   {
-    for (int  j = i; j < i + M; j++)
+    if(i + M > N) continue; 
+    string sub = a.substr(i, M);
+    sort(sub.begin(), sub.end());
+    if (sub.compare(b) == 0)
     {
-      int match = 0;
-      for (int  k = 0; k < M; k++) {
-        if (arr1[j] == arr2[k])
-        {
-          match++;
-        }
-      }
-      if(match == M) cnt++;
+      cnt++;
     }
   }
   return cnt;

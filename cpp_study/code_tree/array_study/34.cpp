@@ -28,7 +28,7 @@ int main()
         // success : arr1의 i번 index부터의 수열이 arr2와 완전히 일치할 때만 true, 그 외 false
         bool success = true;
 
-        for(int j = 0; i < n2; j++) {
+        for(int j = 0; j < n2; j++) {
             // arr1의 index가 범위 밖으로 벗어날 때
             if (i + j >= n1) {
                 success = false;

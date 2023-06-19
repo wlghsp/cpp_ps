@@ -19,9 +19,21 @@ void Input() {
 }
 
 int Search() {
-  int cnt = 0;
-  
-  return cnt;
+  int max_cnt = 0;
+  for (int k = 1; k < MAX_N + 1; k++) {
+    int cnt = 0;
+    for (int i = 0; i < n; i++)
+    {
+      for (int j = i + 1; j < n; j++)
+      {
+        // if((k - arr[i]) == (arr[j] - k)) cnt++; 
+        // 등차수열에서 어떤 수의 앞 뒤를 더한 값은 그 수의 2배와 같다.
+        if((arr[i] + arr[j]) == k * 2) cnt++; 
+      }
+    }
+    max_cnt = max(cnt, max_cnt);
+  }
+  return max_cnt;
 }
 
 

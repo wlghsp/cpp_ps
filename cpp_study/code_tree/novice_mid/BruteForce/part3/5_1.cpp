@@ -5,7 +5,7 @@
 using namespace std;
 /*
 수를 여러번 사용하여 특정 수 만들기
-내 풀이
+해설 풀이
 */
 
 int a, b, c;
@@ -15,14 +15,14 @@ void Input() {
 }
 
 int Search() {
-  int max_sum = INT_MIN;
-  for (int i = 0; i < c / a + 1; i++)
+  int max_sum = 0;
+  for (int i = 0; i  * a <= c; i++)
   {
-    for (int j = 0; j < c / b + 1; j++)
-    {
-      int sum = a * i + b * j; 
-      if(sum <= c) max_sum = max(sum, max_sum);
-    }
+    int sum = a * i; 
+
+    int num_b = (c - sum) / b;
+    sum += num_b * b;
+    max_sum = max(max_sum, sum);
   }
   
   return max_sum;

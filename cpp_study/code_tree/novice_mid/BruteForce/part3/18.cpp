@@ -6,26 +6,37 @@ using namespace std;
 /*
 숫자들의 최대 차
 내 풀이
-
-원소의 개수 N과 최대로 차이날 수 있는 값 K가 주어집니다. 
-숫자들을 적절하게 뽑아 최댓값과 최솟값과의 차가 K 이하가 되도록 할 때, 
-뽑을 수 있는 최대 숫자의 개수를 구하는 프로그램을 작성해보세요.
 */
 
-int n, m;
+int n, k;
+int max_val= INT_MIN;
 int arr[MAX_N];
 
 void Input() {
-  cin >> n >> m;
-  for (int i = 0; i < m; i++)
+  cin >> n >> k;
+  for (int a = 0; a < n; a++)
   {
-    cin >> arr[i];
+    cin >> arr[a];
+    max_val = max(max_val, arr[a]);
   }
 }
 
 
 int Search() {
   int max_cnt = 0;
+  for (int a = 1; a < max_val; a++)
+  {
+    int cnt = 0;
+    for (int j = 0; j < n; j++)
+    {
+      if (a <= arr[j] && arr[j] <= a + k)
+      {
+        cnt++;       
+      } 
+    }
+    max_cnt = max(max_cnt, cnt);
+  }
+  
   return max_cnt;
 }
 
